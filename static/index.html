@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biltemperatur för djur</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    label, select, input, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Biltemperatur för djur</h1>
+
+  <label for="temp">Utomhustemperatur (°C):</label>
+  <select id="temp">
+    <option value="15">15</option>
+    <option value="20">20</option>
+    <option value="25" selected>25</option>
+    <option value="30">30</option>
+    <option value="35">35</option>
+    <option value="40">40</option>
+  </select>
+
+  <label for="time">Tid i bilen (min):</label>
+  <select id="time">
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+    <option value="20" selected>20</option>
+    <option value="30">30</option>
+    <option value="60">60</option>
+    <option value="custom">Ange egen tid</option>
+  </select>
+  <input type="number" id="customTime" placeholder="Egen tid (min)" style="display:none;" min="1" />
+
+  <label for="sun">Solljus:</label>
+  <select id="sun">
+    <option value="none">Inget</option>
+    <option value="partial">Delvis</option>
+    <option value="direct">Direkt solljus</option>
+  </select>
+
+  <label>
+    <input type="checkbox" id="windowsOpen" /> Rutor är öppna
+  </label>
+
+  <button onclick="calculateTemp()">Räkna</button>
+
+  <h2 id="result"></h2>
+
+  <script src="script.js"></script>
+</body>
+</html>
